@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>武汉水资源管理系统</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="renderer" content="webkit">
+    <meta name="wap-font-scale" content="no">
+    <link href="../../static/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../static/js/iCheck/all.css" rel="stylesheet" type="text/css">
+    <link href="../../static/css/all.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="ywt-container">
+        <div class="ywt-nav">
+                <div class="logo"></div>
+                <ul class="ywt-nav-list">
+                    <li class="n1">
+                        <a title="首页" href="../home.html">
+                            <i></i>
+                            <span>首页</span>
+                        </a>
+                    </li>
+                    <!--
+                    <li class="n2">
+                        <a title="项目地图">
+                            <i></i>
+                            <span>项目地图</span>
+                        </a>
+                    </li>
+                    -->
+                    <li class="n3">
+                        <a title="取水计划" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i></i>
+                            <span>取水计划</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../取水计划/中长期供求计划下达.html">中长期供求计划下达</a></li>
+                            <li><a href="../取水计划/区域年度用水计划管理.html">区域年度用水计划管理</a></li>
+                            <li class="divider"></li>
+                            <li><a href="../取水计划/取水许可审批与监督管理.html">取水许可审批与监督管理</a></li>
+                            <li><a href="../取水计划/地下水管理.html">地下水管理</a></li>
+                            <li><a href="../取水计划/水资源费征收管理.html">水资源费征收管理</a></li>
+                        </ul>
+                    </li>
+                    <li class="on n4">
+                        <a title="节水管理" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i></i>
+                            <span>节水管理</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../节水管理/用水定额管理.html">用水定额管理</a></li>
+                            <li><a href="../节水管理/用水计划管理.html">用水计划管理</a></li>
+                            <li class="divider"></li>
+                            <li><a href="../节水管理/水平衡测试.html">水平衡测试</a></li>
+                            <li><a href="../节水管理/节水型城市社会建设.html">节水型城市社会建设</a></li>
+                        </ul>
+                    </li>
+                    <li class="n5">
+                        <a title="水功能区管理" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i></i>
+                            <span>水功能区管理</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../水功能区管理/水功能区划.html">水功能区划</a></li>
+                            <li><a href="../水功能区管理/水功能区纳污能力核定.html">水功能区纳污能力核定</a></li>
+                            <li class="divider"></li>
+                            <li><a href="../水功能区管理/水功能区达标评价.html">水功能区达标评价</a></li>
+                            <li><a href="../水功能区管理/饮用水源地保护.html">饮用水源地保护</a></li>
+                            <li><a href="../水功能区管理/地下水监测与保护.html">地下水监测与保护</a></li>
+                            <li><a href="../水功能区管理/入河排污口普查与监测.html">入河排污口普查与监测</a></li>
+                            <li><a href="../水功能区管理/排污口设置审批管理.html">排污口设置审批管理</a></li>
+                        </ul>
+                    </li>
+                    <!--
+                    <li class="n6 dropdown">
+                        <a title="工作督办" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i></i>
+                            <span>工作督办</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">工程建设</a></li>
+                            <li><a href="#">实时动态监控</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">工程应急管理</a></li>
+                        </ul>
+                    </li>
+                    -->
+                    <li class="n7">
+                        <a title="决策支持系统" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i></i>
+                            <span>决策支持系统</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../决策支持/水资源规划.html">水资源规划</a></li>
+                            <li><a href="../决策支持/水生态文明建设.html">水生态文明建设</a></li>
+                            <li><a href="../决策支持/最严格水资源管理制度考核.html">最严格水资源管理制度考核</a></li>
+                        </ul>
+                    </li>
+                    <li class="n8 dropdown">
+                        <a title="系统管理" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i></i>
+                            <span>系统管理</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">用户管理</a></li>
+                            <li><a href="#">角色管理</a></li>
+                            <li><a href="#">权限管理</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">日志管理</a></li>
+                        </ul>
+                    </li>
+                    <li class="n9">
+                        <a>
+                            <i></i>
+                        </a>
+                    </li>
+                </ul>
+                <div class="dropdown downMenu-box dropright">
+                    <a href="#" class="dropdown-toggle downMenu-head" data-toggle="dropdown">
+                        <i></i>
+                        <span>水资源处</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">工程建设</a></li>
+                        <li><a href="#">实时动态监控</a></li>
+                        <li><a href="#">工程应急管理</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">分离的链接</a></li>
+                    </ul>
+                </div>
+        </div>
+        <div class="nav-path">
+            <div class="path-item">
+                <a>节水管理</a>
+            </div>
+            <div class="path-item">水平衡测试</div>
+        </div>
+        <!--
+        <div class="ywt-tab JS-tab">
+            <a class="tab-item">用水计划申请</a>
+            <a class="tab-item active">用水计划审批</a>
+            <a class="tab-item">取用水计划备案</a>
+            <a class="tab-item">公共供水管网计划用水管理</a>
+            <a class="tab-item">取用水计划汇总</a>
+        </div>
+        -->
+        <div class="ywt-tab-content JS-tab-content">
+            <div id="home" class="active">
+                <div class="search-container">
+                    <div class="form-block form-block-v">
+                        <label class="form-label">企业名称</label>
+                        <div class="form-box">
+                            <input class="form-input form-input-radius" placeholder="" />
+                        </div>
+                    </div>
+                    <div class="form-block form-block-v">
+                        <label class="form-label">测试负责人</label>
+                        <div class="form-box">
+                            <input class="form-input form-input-radius" placeholder="" />
+                        </div>
+                    </div>
+                    <div class="form-block form-block-v">
+                        <label class="form-label">报告审核人</label>
+                        <div class="form-box">
+                            <input class="form-input form-input-radius" placeholder="" />
+                        </div>
+                    </div>
+                    
+                    <!--
+                    <div class="form-block form-block-v">
+                        <label class="form-label">拆迁逾期</label>
+                        <div class="form-box">
+                            <div class="select-box">
+                                <select class="form-input">
+                                    <option>拆迁逾期</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-block form-block-v">
+                        <label class="form-label">年份</label>
+                        <div class="form-box">
+                            <input class="JS-datepicker form-input form-input-radius" placeholder="2018" />
+                        </div>
+                    </div>
+                    -->
+                    <div class="btn-box">
+                        <buttton class="btn btn-info">查询</buttton>
+                        <buttton class="btn btn-info">添加</buttton>
+                        <buttton class="btn btn-info">导出</buttton>
+                    </div>
+                </div>
+                <div class="content-box tz">
+                    <div class="content-body">
+                        <table class="table-list">
+                            <thead>
+                                <tr>
+                                    <th>类别</th>
+                                    <th>企业名称</th>
+                                    <th>企业组织机构</th>
+                                    <!--
+                                    <th class="ps">责任单位
+                                        <span class="s-j"></span>
+                                    </th>
+                                    <th class="ps">建设规模和内容
+                                        <span class="s-s"></span>
+                                    </th>
+                                    <th class="ps">总投资（万元）
+                                        <span class="s"></span>
+                                    </th>
+                                    -->
+                                    <th>单位地址</th>
+                                    <th>测试主管部门</th>
+                                    <th>测试负责人</th>
+                                    <th>报告审核人</th>
+                                    <th>完成日期</th>
+                                    <th>参加测试人员</th>
+                                    <th>验收部门</th>
+                                    <th>验收日期</th>
+                                    <th>备注</th>
+                                    <th>编辑</th>
+                                    <th>删除</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>xx</td>
+                                    <td>xxx</td>
+                                    <td>xxxx</td>
+                                    <td>xxxxxxxxxx</td>
+                                    <td>300</td>
+                                    <td>100</td>
+                                    <td>xxdd</td>
+                                    <td>2017-11-07</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>2017-12-21</td>
+                                    <td></td>
+                                    <td><a href="#"><img src="../../static/img/edit.gif" ></a></td>
+                                    <td><a href="#"><img src="../../static/img/delete.gif" ></a></td>
+                                </tr>
+                                <tr>
+                                    <td>xx</td>
+                                    <td>xxx</td>
+                                    <td>xxxx</td>
+                                    <td>xxxxxxxxxx</td>
+                                    <td>300</td>
+                                    <td>100</td>
+                                    <td>xxdd</td>
+                                    <td>2017-11-07</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>2017-12-21</td>
+                                    <td></td>
+                                    <td><a href="#"><img src="../../static/img/edit.gif" ></a></td>
+                                    <td><a href="#"><img src="../../static/img/delete.gif" ></a></td>
+                                </tr>
+                                <tr>
+                                    <td>xx</td>
+                                    <td>xxx</td>
+                                    <td>xxxx</td>
+                                    <td>xxxxxxxxxx</td>
+                                    <td>300</td>
+                                    <td>100</td>
+                                    <td>xxdd</td>
+                                    <td>2017-11-07</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>2017-12-21</td>
+                                    <td></td>
+                                    <td><a href="#"><img src="../../static/img/edit.gif" ></a></td>
+                                    <td><a href="#"><img src="../../static/img/delete.gif" ></a></td>
+                                </tr>
+                                <tr>
+                                    <td>xx</td>
+                                    <td>xxx</td>
+                                    <td>xxxx</td>
+                                    <td>xxxxxxxxxx</td>
+                                    <td>300</td>
+                                    <td>100</td>
+                                    <td>xxdd</td>
+                                    <td>2017-11-07</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>2017-12-21</td>
+                                    <td></td>
+                                    <td><a href="#"><img src="../../static/img/edit.gif" ></a></td>
+                                    <td><a href="#"><img src="../../static/img/delete.gif" ></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="content-foot">
+                        <div class="table-foot">
+                            <div class="table-page-show">
+                                <div class="select-box select-box-ms">
+                                    <select class="form-input" placeholder="建设性质">
+                                        <option>10条/页</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="table-page">
+                                <a class="disabled">&lt;</a>
+                                <a class="on">1</a>
+                                <a>2</a>
+                                <a>3</a>
+                                <a>4</a>
+                                <a>6</a>
+                                <a>&gt;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="info">
+                <div class="search-container">
+                    <div class="form-block form-block-v">
+                        <label class="form-label">项目名称</label>
+                        <div class="form-box">
+                            <input class="form-input" placeholder="项目名称" />
+                        </div>
+                    </div>
+                    <div class="form-block form-block-v">
+                        <label class="form-label">四水类别</label>
+                        <div class="form-box">
+                            <div class="select-box">
+                                <select class="form-input" placeholder="四水类别">
+                                    <option>四水类别</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-block form-block-v">
+                        <label class="form-label">拆迁逾期</label>
+                        <div class="form-box">
+                            <div class="select-box">
+                                <select class="form-input">
+                                    <option>拆迁逾期</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-block form-block-v">
+                        <label class="form-label">征地逾期</label>
+                        <div class="form-box">
+                            <div class="select-box">
+                                <select class="form-input">
+                                    <option>征地逾期</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-box">
+                        <buttton class="btn btn-info">搜索</buttton>
+                        <buttton class="btn disabled">重置</buttton>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="../../static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../static/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../static/js/iCheck/icheck.min.js"></script>
+    <script type="text/javascript" src="../../static/js/common.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>

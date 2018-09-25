@@ -1,0 +1,155 @@
+@charset "utf-8";
+.table-list {
+    td,
+    th {
+        position: relative;
+        text-align: left;
+        font-weight: normal;
+        padding: 14px 10px;
+        line-height: 30px;
+        border-bottom: 1px solid $bdColor;
+    }
+    tbody {
+        tr:hover td {
+            background: #ebf7ff;
+        }
+    }
+
+    &.table-list-sm {
+        border-collapse: collapse;
+        td,
+        th {
+            padding: 8px 10px;
+            line-height: 28px;
+            border-bottom: 1px solid $bdColor;
+        }
+
+        .table-title{
+            text-align: center;
+            font-size: 16px;
+        }
+    }
+
+    &.table-pai{
+        thead th,
+        thead td{
+            padding: 10px 10px;
+            font-size: 16px;
+        }
+        tbody th,
+        tbody td{
+            padding: 7px 10px;
+        }
+
+        tr:last-child td{
+            border-bottom: none;
+        }
+         
+        .st{
+            display: inline-block;
+            font-weight: bold;
+            font-size: 22px;
+            font-family: $Ef;
+            vertical-align: middle;
+        }
+    }
+}
+
+.table-no-wrap {
+    table-layout: fixed;
+    td,
+    th {
+        white-space: nowrap;
+    }
+}
+
+.table-foot {
+    padding: 25px 0;
+    @extend %clearfix;
+    .table-page-show {
+        float: left;
+        .select-box.select-box-ms:before {
+            border-radius: 0 6px 6px 0;
+        }
+        .form-input {
+            width: 100px;
+            min-width: auto;
+            border-radius: 6px;
+        }
+    }
+    .table-page {
+        float: right;
+        a,
+        span {
+            float: left;
+            margin-left: 6px;
+            padding: 0 6px;
+            min-width: 32px;
+            height: 32px;
+            line-height: 32px;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid $bdColor;
+            cursor: pointer;
+            font-size: 12px;
+            font-family: $Ef;
+            &:hover {
+                color: #5ba5f0;
+                border-color: #348eed;
+            }
+            &.on {
+                color: #fff;
+                background: #348eed;
+                border-color: #348eed;
+            }
+            &.disabled {
+                border: 1px solid $bdColor;
+                color: $fontCT;
+                opacity: .8;
+                cursor: not-allowed;
+            }
+        }
+    }
+}
+
+.ps {
+    padding-right: 20px !important;
+    .s,
+    .s-s,
+    .s-j {
+        position: absolute;
+        top: 50%;
+        margin-left: 5px;
+        margin-top: -7px;
+        width: 12px;
+        height: 15px;
+        background: transparent url("../img/slot-icon.png") no-repeat;
+        cursor: pointer;
+    }
+    .s-s {
+        background-position: -12px 0
+    }
+    .s-j {
+        background-position: -24px 0
+    }
+}
+
+.table-edit {
+    tbody {
+        td {
+            padding: 16px;
+            vertical-align: middle;
+
+            &.t-edit-title{
+                text-align: left;
+                line-height: 24px;
+                width: 15%;
+                max-width: 250px;
+
+                &.t-edit-title-t{
+                    vertical-align: top
+                }
+            }
+        }
+    }
+}

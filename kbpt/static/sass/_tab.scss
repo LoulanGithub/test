@@ -1,0 +1,52 @@
+@charset "utf-8";
+.ywt-tab{
+    @extend %clearfix;
+    margin: 0 -10px;
+    padding: 0 90px;
+    border-bottom: 2px solid $bgColor;
+
+    .tab-item{
+        float: left;
+        display: block;
+        position: relative;
+        margin: 0 10px;
+        padding: 10px 10px;
+        line-height: 40px;
+        font-size: 16px;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:after{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            height: 4px;
+            width: 100%;
+            background: transparent;
+        }
+        &.active{
+            color: $baseColor;
+            &:after{
+                background: $baseColor;
+            }
+        }
+
+        &:hover{
+            color: $baseColor;
+        }
+    }
+
+    &.ywt-tab-default{
+        padding: 0 25px;
+    }
+}
+
+.ywt-tab-content{
+    &>div{
+        display: none;
+        &.active{
+            display: block;
+        }
+    }
+}

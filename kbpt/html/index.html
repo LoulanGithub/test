@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>全国大型水库大坝安全监测</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/all.css">
+    <link rel="stylesheet" type="text/css" href="../static/bootstrap/css/bootstrap.min.css">
+    <link href="http://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../static/bootsnav/css/bootsnav.css">
+
+    <script type="text/javascript" src="../static/bootsnav/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../static/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../static/bootsnav/js/bootsnav.js"></script>
+	<style type="text/css">
+		.navbar-brand{
+		    padding: 29px 15px;
+		    height: auto;
+		}
+		nav.navbar.bootsnav{
+		    border: none;
+		}
+		.navbar-nav{
+		    float: left;
+		}
+		nav.navbar.bootsnav ul.nav > li > a{
+		    color: #FFF;
+		    padding: 30px;
+		}
+		nav.navbar.bootsnav ul.nav > li:hover{
+		    background: #3881EB;
+		}
+        nav.navbar.bootsnav ul.nav > li > a.active{
+            background: #3881EB;
+            color: orange;
+            /*border-bottom:5px solid #57E2C1;*/
+        }
+		.nav > li:after{
+		    content: "";
+		    width: 0;
+		    height: 5px;
+		    background: #57E2C1;
+		    position: absolute;
+		    bottom: 0;
+		    left: 0;
+		    transition: all 0.5s ease 0s;
+		}
+		.nav > li:hover:after{
+		    width: 100%;
+		}
+		nav.navbar.bootsnav ul.nav > li.dropdown > a.dropdown-toggle:after{
+		    content: "+";
+		    font-family: 'FontAwesome';
+		    font-size: 16px;
+		    font-weight: 500;
+		    position: absolute;
+		    top: 35%;
+		    right: 10%;
+		    transition: all 0.4s ease 0s;
+		}
+		nav.navbar.bootsnav ul.nav > li.dropdown.on > a.dropdown-toggle:after{
+		    content: "\f105";
+		    transform: rotate(90deg);
+		}
+		.dropdown-menu.multi-dropdown{
+		    position: absolute;
+		    left: -100% !important;
+		}
+		nav.navbar.bootsnav li.dropdown ul.dropdown-menu{
+		    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+		    border: none;
+		}
+        .breadcrumb {
+            margin-bottom: 0px;
+        }
+	</style>
+</head>
+<body>
+	<div class="ywt-container">
+        <div class="ywt-nav">
+            <div class="logo"></div>
+	        <div class="container">
+                <nav class="navbar navbar-default navbar-mobile bootsnav">
+                    <div class="collapse navbar-collapse" id="navbar-menu">
+                        <ul class="nav navbar-nav" data-in="fadeInDown" data-out="fadeOutUp">
+                            <li class="dropdown">
+                                <a id='firstA' href="#" class="dropdown-toggle active" data-toggle="dropdown">安全管理监督</a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >注册登记管理</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="安全管理监督/注册登记管理/" target="contents">注册登记信息填报</a></li>
+                                            <li><a href="安全管理监督/注册登记管理/" target="contents">注册登记信息修改</a></li>
+                                            <li><a href="安全管理监督/注册登记管理/" target="contents">注册登记信息审核</a></li>
+                                            <li><a href="安全管理监督/注册登记管理/" target="contents">注册登记信息统计与分析</a></li>
+                                            <li><a href="安全管理监督/注册登记管理/" target="contents">注册登记信息查询</a></li>
+                                            <li><a href="安全管理监督/注册登记管理/" target="contents">注册登记证到期提醒</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >安全鉴定管理</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="安全管理监督/安全鉴定管理/" target="contents">安全鉴定成果填报</a></li>
+                                            <li><a href="安全管理监督/安全鉴定管理/" target="contents">安全鉴定信息修改</a></li>
+                                            <li><a href="安全管理监督/安全鉴定管理/" target="contents">安全鉴定信息审核</a></li>
+                                            <li><a href="安全管理监督/安全鉴定管理/" target="contents">安全鉴定信息统计与分析</a></li>
+                                            <li><a href="安全管理监督/安全鉴定管理/" target="contents">安全鉴定信息查询</a></li>
+                                            <li><a href="安全管理监督/安全鉴定管理/" target="contents">安全鉴定到期提醒</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >调度规程管理</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="安全管理监督/调度规程管理/" target="contents">调度规程信息填报</a></li>
+                                            <li><a href="安全管理监督/调度规程管理/" target="contents">调度规程信息修订</a></li>
+                                            <li><a href="安全管理监督/调度规程管理/" target="contents">调度规程信息审核</a></li>
+                                            <li><a href="安全管理监督/调度规程管理/" target="contents">调度规程信息统计与分析</a></li>
+                                            <li><a href="安全管理监督/调度规程管理/" target="contents">调度规程信息查询</a></li>
+                                            <li><a href="安全管理监督/调度规程管理/" target="contents">调度规程编制提醒</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >应急预案管理</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="安全管理监督/应急预案管理/" target="contents">应急预案信息填报</a></li>
+                                            <li><a href="安全管理监督/应急预案管理/" target="contents">应急预案信息修订</a></li>
+                                            <li><a href="安全管理监督/应急预案管理/" target="contents">应急预案信息审核</a></li>
+                                            <li><a href="安全管理监督/应急预案管理/" target="contents">应急预案信息统计与分析</a></li>
+                                            <li><a href="安全管理监督/应急预案管理/" target="contents">应急预案信息查询</a></li>
+                                            <li><a href="安全管理监督/应急预案管理/" target="contents">应急预案编制建议提醒</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >维修养护管理</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="安全管理监督/维修养护管理/" target="contents">维修养护计划添加</a></li>
+                                            <li><a href="安全管理监督/维修养护管理/" target="contents">维修养护进度填报</a></li>
+                                            <li><a href="安全管理监督/维修养护管理/" target="contents">维修养护进度修改</a></li>
+                                            <li><a href="安全管理监督/维修养护管理/" target="contents">维修养护信息审核</a></li>
+                                            <li><a href="安全管理监督/维修养护管理/" target="contents">维修养护信息统计与分析</a></li>
+                                            <li><a href="安全管理监督/维修养护管理/" target="contents">维修养护信息查询</a></li>
+                                            <li><a href="安全管理监督/维修养护管理/" target="contents">维修养护进度提醒</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >多媒体信息管理</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="安全管理监督/多媒体信息管理/" target="contents">多媒体信息上传</a></li>
+                                            <li><a href="安全管理监督/多媒体信息管理/" target="contents">多媒体信息下载</a></li>
+                                            <li><a href="安全管理监督/多媒体信息管理/" target="contents">多媒体信息浏览</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >年度报告自动生成</a>
+                                        <ul class="dropdown-menu">
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">年度报告模板与生成</a>
+                                                <ul class="dropdown-menu multi-dropdown">
+                                                    <li><a href="安全管理监督/./" target="contents">年度报告模板设置</a></li>
+                                                    <li><a href="安全管理监督/./" target="contents">模板管理</a></li>
+                                                    <li><a href="安全管理监督/./" target="contents">年度报告自动生成</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="安全管理监督/./" target="contents">年度信息填报</a></li>
+                                            <li><a href="安全管理监督/./" target="contents">年度信息修改</a></li>
+                                            <li><a href="安全管理监督/./" target="contents">年度报告审核</a></li>
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">年度报告统计与分析</a>
+                                                <ul class="dropdown-menu multi-dropdown">
+                                                    <li><a href="安全管理监督/./" target="contents">单座水库年度报告统计与分析</a></li>
+                                                    <li><a href="安全管理监督/./" target="contents">全国水库年度报告统计与分析</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="安全管理监督/./" target="contents">年度报告查询</a></li>
+                                            <li><a href="安全管理监督/./" target="contents">年度报告编制提醒</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >在线调研</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="安全管理监督/./" target="contents">调研表单定制</a></li>
+                                            <li><a href="安全管理监督/./" target="contents">调研信息填报</a></li>
+                                            <li><a href="安全管理监督/./" target="contents">调研信息修改</a></li>
+                                            <li><a href="安全管理监督/./" target="contents">调研信息审核</a></li>
+                                            <li><a href="安全管理监督/./" target="contents">调研信息统计与分析</a></li>
+                                            <li><a href="安全管理监督/./" target="contents">调研信息查询</a></li>
+                                            <li><a href="安全管理监督/./" target="contents">调研填报提醒</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >管理工作统计</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#" target="contents">管理工作统计与分析</a></li>
+                                            <li><a href="#" target="contents">管理工作查询</a></li>                                            
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >管理工作提醒</a>
+                                        <ul class="dropdown-menu">
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">管理工作提醒条件设置</a>
+                                                <ul class="dropdown-menu multi-dropdown">
+                                                    <li><a href="安全管理监督/./" target="contents">注册登记管理</a></li>
+                                                    <li><a href="安全管理监督/./" target="contents">安全鉴定管理</a></li>
+                                                    <li><a href="安全管理监督/./" target="contents">调度规程管理</a></li>
+                                                    <li><a href="安全管理监督/./" target="contents">应急预案管理</a></li>
+                                                    <li><a href="安全管理监督/./" target="contents">维修养护管理</a></li>
+                                                    <li><a href="安全管理监督/./" target="contents">年度报告管理</a></li>
+                                                    <li><a href="安全管理监督/./" target="contents">在线调研管理</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#" target="contents">管理工作提醒发送</a></li>
+                                            <li><a href="#" target="contents">提醒信息显示</a></li>
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">管理工作提醒信息统计与查询</a>
+                                                <ul class="dropdown-menu multi-dropdown">
+                                                    <li><a href="安全管理监督/./" target="contents">提醒信息统计</a></li>
+                                                    <li><a href="安全管理监督/./" target="contents">提醒信息查询</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">管理信息维护</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">监测信息管理</a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">监测数据维护</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="监测信息管理/./" target="contents">数据录入</a></li>
+                                            <li><a href="监测信息管理/./" target="contents">数据修改</a></li>
+                                            <li><a href="监测信息管理/./" target="contents">数据删除</a></li>
+                                            <li><a href="监测信息管理/./" target="contents">数据导入</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">监测数据统计</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="监测信息管理/./" target="contents">监测点统计</a></li>
+                                            <li><a href="监测信息管理/./" target="contents">数据缺失率统计</a></li>
+                                            <li><a href="监测信息管理/./" target="contents">数据缺失时段统计</a></li>
+                                            <li><a href="监测信息管理/./" target="contents">最近上报时间统计</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">巡视检查管理</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="监测信息管理/./" target="contents">巡检轨迹查询</a></li>
+                                            <li><a href="监测信息管理/./" target="contents">巡检结果查询</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">巡视检查演练</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="监测信息管理/./" target="contents">巡视三维仿真</a></li>
+                                            <li><a href="监测信息管理/./" target="contents">巡视能力自查</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">安全分析与预警</a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">监测资料分析</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="安全分析与预警/监测资料分析" target="contents">异常数据处理</a></li>
+                                            <li><a href="安全分析与预警/监测资料分析" target="contents">变形监测资料分析</a></li>
+                                            <li><a href="安全分析与预警/监测资料分析" target="contents">渗流监测资料分析</a></li>
+                                            <li><a href="安全分析与预警/监测资料分析" target="contents">应力应变监测资料分析</a></li>
+                                            <li><a href="安全分析与预警/监测资料分析" target="contents">图形绘制与显示</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">监测资料预警</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="安全分析与预警/./" target="contents">监测数据属性识别</a></li>
+                                            <li><a href="安全分析与预警/./" target="contents">测值统计检验及特征分析</a></li>
+                                            <li><a href="安全分析与预警/./" target="contents">模型选择优化</a></li>
+                                            <li><a href="安全分析与预警/./" target="contents">模型合理性检验</a></li>
+                                            <li><a href="安全分析与预警/./" target="contents">监测资料实时预警</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">大坝安全预警</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="安全分析与预警/./" target="contents">大坝安全实时预警</a></li>
+                                            <li><a href="安全分析与预警/./" target="contents">预警信息审核与管理</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">应急决策</a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">突发事件上报与跟踪</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="应急决策/./" target="contents">突发事件过程上报</a></li>
+                                            <li><a href="应急决策/./" target="contents">突发事件现场视频上传</a></li>
+                                            <li><a href="应急决策/./" target="contents">应急监测数据在线填报</a></li>
+                                            <li><a href="应急决策/./" target="contents">突发事件过程查询</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">应急会商决策支持</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="应急决策/./" target="contents">监测信息集成与显示</a></li>
+                                            <li><a href="应急决策/./" target="contents">突发事件原因排查</a></li>
+                                            <li><a href="应急决策/./" target="contents">安全状况分析研判</a></li>
+                                            <li><a href="应急决策/./" target="contents">应急决策建议</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">应急处置支持</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="应急决策/./" target="contents">应急预警</a></li>
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">应急处置措施建议</a>
+                                                <ul class="dropdown-menu multi-dropdown">
+                                                    <li><a href="安全管理监督/./" target="contents">险情报告、通报信息</a></li>
+                                                    <li><a href="安全管理监督/./" target="contents">应急调度</a></li>
+                                                    <li><a href="安全管理监督/./" target="contents">应急抢险</a></li>
+                                                    <li><a href="安全管理监督/./" target="contents">应急监测和巡查</a></li>
+                                                    <li><a href="安全管理监督/./" target="contents">人员应急转移</a></li>
+                                                    <li><a href="安全管理监督/./" target="contents">临时安置</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="应急决策/./" target="contents">应急处置跟踪</a></li>
+                                            <li><a href="应急决策/./" target="contents">应急处置效果评估</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">后期处置支持</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="应急决策/./" target="contents">突发事件原因详细分析</a></li>
+                                            <li><a href="应急决策/./" target="contents">后期处置建议</a></li>
+                                            <li><a href="应急决策/./" target="contents">后期处置跟踪</a></li>
+                                            <li><a href="应急决策/./" target="contents">后期处置效果评估</a></li>
+                                            <li><a href="应急决策/./" target="contents">事故报告</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">辅助决策支持</a>
+                                        <ul class="dropdown-menu">
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">突发事件案例</a>
+                                                <ul class="dropdown-menu multi-dropdown">
+                                                    <li><a href="安全管理监督/./" target="contents">自然灾害类</a></li>
+                                                    <li><a href="安全管理监督/./" target="contents">事故灾难类</a></li>
+                                                    <li><a href="安全管理监督/./" target="contents">社会安全事件类</a></li>
+                                                    <li><a href="安全管理监督/./" target="contents">其他水库大坝突发事件</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="应急决策/./" target="contents">专家库</a></li>
+                                            <li><a href="应急决策/./" target="contents">知识库</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">综合信息服务</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="综合信息服务/./" target="contents">法律法规</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">水库基础信息</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="综合信息服务/./" target="contents">水库电子地图</a></li>
+                                            <li><a href="综合信息服务/./" target="contents">水库信息查询统计</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">运行监督信息</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="综合信息服务/./" target="contents">运行监督过程查询</a></li>
+                                            <li><a href="综合信息服务/./" target="contents">管理事项查询与统计</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">安全监测信息</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="综合信息服务/./" target="contents">安全监测基础信息查询</a></li>
+                                            <li><a href="综合信息服务/./" target="contents">安全监测信息查询</a></li>
+                                            <li><a href="综合信息服务/./" target="contents">安全监测信息统计与分析</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">应急会商信息</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="综合信息服务/./" target="contents">突发事件查询</a></li>
+                                            <li><a href="综合信息服务/./" target="contents">应急预案查询</a></li>
+                                            <li><a href="综合信息服务/./" target="contents">应急处置案例</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="综合信息服务/./" target="contents">公共信息发布</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+	        </div>
+        </div>
+	</div>
+
+    <ol class="breadcrumb">
+        <img src="../static/img/index.png" width="24" height="24" style="margin-right: 10px;" />
+        <li class="active">安全管理监督</li>
+        <li class="active">注册登记管理</li>
+        <li class="active">注册登记信息填报</li>
+    </ol>
+    <div>
+        <iframe id="contents" name="contents" src="" width="100%" height="100%" ></iframe>
+    </div>
+</body>
+</html>
+<script>
+var fa = $('#firstA');
+$('#contents').css('height',function(){
+    return $(document).height()-130;
+});
+$('a').click(function(){
+    var res = '<img src="../static/img/index.png" width="24" height="24" style="margin-right: 10px;"/>';
+    var topMenu = $(this).parent().parent().parent().parent().parent().parent().prev();
+    if(topMenu.is('a')){
+        res += '<li class="active">' + topMenu.text() + '</li>'
+        
+    }else{
+        topMenu = $(this).parent().parent().parent().parent().prev()
+        if(topMenu.is('a')){
+            res += '<li class="active">' + topMenu.text() + '</li>';
+        }else{
+            topMenu = $(this).parent().parent().prev();
+        }
+    }
+    $('.breadcrumb').html(
+        res + 
+        '<li class="active">' + $(this).parent().parent().prev().text() + '</li>' + 
+        '<li class="active">' + $(this).text() + '</li>'
+    );
+    /*
+    topMenu.css({
+        background:'#3881EB',
+        color:'orange'
+    });
+    */
+    if(topMenu.is('active')){
+    }else{
+        fa.removeClass('active');
+        topMenu.addClass('active');
+        //topMenu.parent().css('border-bottom','5px solid #57E2C1');
+        fa = topMenu;
+    }
+    
+});
+</script>

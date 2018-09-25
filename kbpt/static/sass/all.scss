@@ -1,0 +1,52 @@
+@charset "utf-8";
+@import './base';
+@import './variable';
+@import './extend';
+@import './mixin';
+@import './scroll';
+@import './layout';
+@import './button';
+@import './form';
+@import './tab';
+@import './table';
+@import './nav';
+@import './content';
+@import './bootstrap';
+
+
+html,
+body {
+    width: 100%;
+    background: #ffffff;
+    min-width: $minWidth;
+}
+
+body {
+    font-size: $baseFontSize;
+    color: $fontCB;
+    font-family: Cf;
+}
+
+a,a:hover,a:active{
+    color: $fontCB;
+    text-decoration: none;
+}
+
+.ptb16{
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.tc{
+    text-align: center!important;
+}
+
+.tl{
+    text-align: left!important;
+}
+.cr{
+    text-align: right!important;
+}
+
+
+

@@ -1,0 +1,44 @@
+@charset "utf-8";
+.ywt-container {
+    width: 100%;
+    min-width: $minWidth;
+}
+
+.ywt-rows {
+    margin: 0 -15px;
+    @extend %clearfix;
+    .ywt-col{
+        padding: 0 15px;
+    }
+}
+
+.ywt-rows-cell {
+    @extend %clearfix;
+}
+
+.ywt-col {
+    float: left;
+    &.ywt-col-3 {
+        width:25%
+    }
+    &.ywt-col-4 {
+        width: 33.333%
+    }
+    &.ywt-col-6{
+        width: 50%;
+    }
+    &.ywt-col-12{
+        width: 100%;
+    }
+}
+
+@media (min-width: 1600px) {
+    .ywt-col {
+        &.ywt-col-z-3-5 {
+            width: 35%;
+        }
+        &.ywt-col-z-3 {
+            width: 30%;
+        }
+    }
+}

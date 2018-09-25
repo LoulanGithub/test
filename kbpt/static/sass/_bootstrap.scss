@@ -1,0 +1,34 @@
+@charset "utf-8";
+.ywt-container {
+    .dropdown-menu {
+        border-color: $bdColor;
+        border-radius: 0;
+    }
+    .caret {
+        margin-left: 6px;
+    }
+    .ywt-nav {
+        .dropdown-menu {
+            li {
+                margin: 0;
+                float: none;
+                a {
+                    width: 100%;
+                    line-height: 24px;
+                    padding: 10px 15px;
+                    color: $fontCB;
+                    font-size: 14px;
+                }
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+    .downMenu-box{
+        .dropdown-menu{
+            left: auto;
+            right: 0;
+        }
+    }
+}

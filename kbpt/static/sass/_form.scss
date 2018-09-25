@@ -1,0 +1,185 @@
+@charset "utf-8";
+select::-ms-expand {
+    display: none;
+}
+
+.form-input {
+    padding: 10px;
+    height: 44px;
+    line-height: 24px;
+    min-width: 150px;
+    max-width: 250px;
+    font-size: 18px;
+    border: 1px solid $bdColor;
+    overflow: hidden;
+    font-family: Cf;
+    @include transition(all .3s);
+    &:active,
+    &:focus {
+        border-color: $baseColor;
+        @include box-shadow(0 0 5px rgba(52, 142, 237, .3));
+    }
+    &.error,
+    &.error:active,
+    &.error:focus {
+        border-color: #dd0000;
+        @include box-shadow(0 0 5px rgba(221, 0, 0, .3));
+    }
+    &.form-input-ms {
+        padding: 4px 10px;
+        height: 32px;
+        font-size: 14px;
+    }
+}
+
+textarea.form-input {
+    height: auto;
+    min-height: 120px;
+}
+
+.form-input-radius {
+    border-radius: 6px;
+}
+
+.form-input-radius-lg {
+    border-radius: 20px;
+}
+
+.input-block {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+select.form-input {
+    padding: 0 10px;
+}
+
+.select-box {
+    position: relative;
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        background: #fff
+    }
+    &:before,
+    &:after {
+        width: 24px;
+        top: 1px;
+        right: 1px;
+        height: 42px;
+        background: #fff
+    }
+    &:after {
+        width: 18px;
+        height: 10px;
+        top: 50%;
+        right: 8px;
+        margin-top: -5px;
+        background: #fff url("../img/allow.png") no-repeat 0 -18px;
+    }
+    &.select-box-ms {
+        .form-input {
+            @extend .form-input-ms;
+        }
+        &:before {
+            height: 30px;
+        }
+    }
+    &.select-box-block {
+        width: 100%;
+        .form-input {
+            @extend .input-block;
+        }
+    }
+    &.select-box-radius {
+        .form-input {
+            @extend .form-input-radius;
+        }
+        &:before {
+            border-radius: 0 6px 6px 0;
+        }
+    }
+}
+
+.date-box {
+    position: relative;
+    .glyphicon-calendar {
+        position: absolute;
+        left: 20px;
+        font-size: 18px;
+        line-height: 42px;
+    }
+    .form-input {
+        padding-left: 40px;
+        width: 220px;
+        min-width: auto;
+        font-size: 16px;
+    }
+    &.date-box-ms {
+        .glyphicon-calendar{
+            font-size: 16px;
+            line-height: 32px;
+        }
+        .form-input {
+            @extend .form-input-ms;
+            padding-left: 45px;
+        }
+    }
+    &.date-box-radius {
+        .form-input {
+            @extend .form-input-radius;
+        }
+    }
+    &.date-box-block {
+        width: 100%;
+        .form-input {
+            @extend .input-block;
+        }
+    }
+}
+
+.form-block {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.form-block-v {
+    .form-label {
+        display: block;
+        line-height: 34px;
+    }
+    .form-box {
+        position: relative;
+        .form-input {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+.form-block-wrap {
+    @extend %clearfix;
+    .form-block {
+        float: left;
+        margin-right: 0;
+        &+.form-block {
+            margin-left: 20px;
+            .form-box {
+                position: relative;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 10px;
+                    height: 1px;
+                    background: $fontCB;
+                    top: 50%;
+                    left: 0;
+                    margin-left: -15px;
+                    z-index: 10;
+                }
+            }
+        }
+    }
+}

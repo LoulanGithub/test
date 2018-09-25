@@ -1,0 +1,51 @@
+@charset "utf-8";
+.btn{
+    display: inline-block;
+    padding: 7px 30px;
+    min-width: 100px;
+    line-height: 28px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid $bdColor;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 18px;
+    cursor: pointer;
+    @include transition(all .3s);
+
+    &:hover{
+        color: #5ba5f0;
+        border-color:#348eed;
+    }
+
+    &+.btn{
+        margin-left: 20px;
+    }
+
+    &.btn-info{
+        background: #348eed;
+        border-color:#348eed;
+        color: #fff;
+    
+        &:hover{
+            background: #5ba5f0;
+            border-color:#5ba5f0;
+        }
+    
+        &:active{
+            background: #348eed;
+            border-color:#348eed;
+        }
+    }
+
+    &.disabled,
+    &.disabled:hover,
+    &.disabled:active,
+    &.disabled[disabled]{
+        background: #f0f0f0;
+        color: $fontCL;
+        border-color: #f0f0f0;
+        cursor: not-allowed;
+    }
+}
+
