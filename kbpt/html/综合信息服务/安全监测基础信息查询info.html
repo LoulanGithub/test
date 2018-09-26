@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>安全监测信息查询</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta name="renderer" content="webkit">
+	<meta name="wap-font-scale" content="no">
+	<script type="text/javascript" src="../../static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../static/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../static/js/iCheck/icheck.min.js"></script>
+	<script type="text/javascript" src="../../static/js/common.js"></script>
+	<link href="../../static/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="../../static/js/iCheck/all.css" rel="stylesheet" type="text/css">
+	<link href="../../static/css/all.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="../../static/bootstrap-select/bootstrap-select.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../static/bootstrap-select/bootstrap-select.css">
+	<link rel="stylesheet" type="text/css" href="../../static/css/info.css">
+	<script type="text/javascript" src="../../static/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+	<script type="text/javascript" src="../../static/bootstrap-datepicker/bootstrap-datepicker.zh-CN.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../static/bootstrap-datepicker/bootstrap-datepicker3.min.css">
+	<script type="text/javascript" src="../../static/echarts/3.8/echarts.min.js"></script>
+	<script>
+        $(function () {
+            $(".datepicker").datepicker({
+                language: "zh-CN",
+                autoclose: true,//选中之后自动隐藏日期选择框
+                todayBtn: true,//今日按钮
+                format: "yyyy年mm月dd日"//日期格式，详见 http://bootstrap-datepicker.readthedocs.org/en/release/options.html#format
+            });
+
+            t3();
+        });
+
+        function t3() {
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('stll'));
+
+            option = {
+                tooltip: {
+                    formatter: "{a} <br/>{b} : {c}%"
+                },
+                toolbox: {
+                    feature: {
+                        /*   restore: {},
+						   saveAsImage: {}*/
+                    }
+                },
+                series: [
+                    {
+                        name: '业务指标',
+                        type: 'gauge',
+                        detail: {formatter: '{value}m³/s'},
+                        data: [{value: 50,name:'渗透流量'}]
+                    }
+                ]
+            };
+            /* option.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
+			 myChart.setOption(option, true);*/
+            setInterval(function () {
+                option.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
+                myChart.setOption(option, true);
+            }, 2000);
+        }
+	</script>
+	<style>
+		.newtd1 {
+			float: left;
+			width: 35%;
+			font-weight: bold;
+
+		}
+
+		.newtd2 {
+			float: left;
+			width: 65%;
+			text-align: left;
+			padding-bottom: 0px;
+		}
+
+		.newrow1 {
+
+			padding-left: 15px;
+			/* border-top: 1px solid #e2e2e2; */
+			/* margin-bottom: 25px; */
+			/* margin-top: 25px; */
+			padding-bottom: 20px;
+			padding-top: 20px;
+			text-align: left;
+			height: auto !important;
+
+		}
+	</style>
+</head>
+<body style="padding-left: 20px;padding-right: 20px">
+	<div class="section bb">
+		<div class="section-head">三峡水坝-安全监测基本信息表
+			<div class="after date-box">
+				<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+				<input class="datepicker form-input form-input-radius-lg" value="2018年05月29日"/>
+			</div>
+		</div>
+		<!--<div class="section-body">
+			<div class="text-box">
+				<div style="text-indent: 2em;">经国家防总批准，三峡水库于2011年9月10日零时正式启动第四次175米试验性蓄水，至18日19时，水库水位已达到160.18米。2012年7月23日，三峡枢纽开启7个泄洪深孔泄洪。上游来水流量激增至每秒4.6万立方米。2012年7月24日，三峡大坝入库流量达7.12万立方米/秒，是三峡水库建库以来遭遇的最大洪峰。</div>
+			</div>
+		</div>-->
+	</div>
+	<div class="row">
+		<div class="col-md-4 section">
+			<div class="section-body">
+				<div class="sectitle">渗流监测</div>
+				<div class="newrow1">
+					<div class="newtd1">渗流量:</div>
+					<div class="newtd2">50立方米/秒</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">坝体渗流压力:</div>
+					<div class="newtd2">50pa</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">坝基渗流压力:</div>
+					<div class="newtd2">100pa</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">扬压力:</div>
+					<div class="newtd2">10pa</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">孔隙水压力:</div>
+					<div class="newtd2">30pa</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">土压力:</div>
+					<div class="newtd2">300pa</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">混凝土温度:</div>
+					<div class="newtd2">30</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">坝基温度监测:</div>
+					<div class="newtd2">50</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div id="stll" style="width: 100%;height: 370px"></div>
+		</div>
+		<div class="col-md-4 section">
+			<div class="section-body">
+				<div class="sectitle">地震反应监测</div>
+				<div class="newrow1">
+					<div class="newtd1">地震动加速度:</div>
+					<div class="newtd2">50米/秒</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">动孔隙水压力:</div>
+					<div class="newtd2">50pa</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">动位移:</div>
+					<div class="newtd2">50米</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">XXXX:</div>
+					<div class="newtd2">10pa</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">XXXXX:</div>
+					<div class="newtd2">30pa</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">xxxxx:</div>
+					<div class="newtd2">300pa</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">XXXXX:</div>
+					<div class="newtd2">30</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">XXXXXX:</div>
+					<div class="newtd2">50</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 section">
+			<div class="section-body">
+				<div class="sectitle">环境量监测</div>
+				<div class="newrow1">
+					<div class="newtd1">水位:</div>
+					<div class="newtd2">100米</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">降水量:</div>
+					<div class="newtd2">xxx</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">冰压力:</div>
+					<div class="newtd2">50米</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">坝前淤积:</div>
+					<div class="newtd2">10pa</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">下游冲刷:</div>
+					<div class="newtd2">30pa</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">xxxx:</div>
+					<div class="newtd2">300pa</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">水温:</div>
+					<div class="newtd2">30</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">气温:</div>
+					<div class="newtd2">50</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 section">
+			<div class="section-body">
+				<div class="sectitle">巡视检查</div>
+				<div class="newrow1">
+					<div class="newtd1">坝体:</div>
+					<div class="newtd2">正常</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">坝基:</div>
+					<div class="newtd2">正常</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">坝区:</div>
+					<div class="newtd2">正常</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">输/泄水洞（管）:</div>
+					<div class="newtd2">内部有堵塞物</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">溢洪道:</div>
+					<div class="newtd2">正常</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">近坝库岸:</div>
+					<div class="newtd2">正常</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">XXXXX:</div>
+					<div class="newtd2">正常</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">XXXXX:</div>
+					<div class="newtd2">正常</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 section">
+			<div class="section-body">
+				<div class="sectitle">变形监测</div>
+				<div class="newrow1">
+					<div class="newtd1">坝体表面变形:</div>
+					<div class="newtd2">略有凸起</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">坝体(基)内部变形:</div>
+					<div class="newtd2">正常</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">防渗体变形:</div>
+					<div class="newtd2">正常</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">界面及接缝变形:</div>
+					<div class="newtd2">正常</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">近坝岸坡变形:</div>
+					<div class="newtd2">正常</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">近坝岸坡变形:</div>
+					<div class="newtd2">正常</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">XXXXX:</div>
+					<div class="newtd2">正常</div>
+				</div>
+				<div class="newrow1">
+					<div class="newtd1">XXXXX:</div>
+					<div class="newtd2">正常</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

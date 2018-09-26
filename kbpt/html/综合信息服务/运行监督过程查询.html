@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>运行监督过程</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta name="renderer" content="webkit">
+	<meta name="wap-font-scale" content="no">
+	<script type="text/javascript" src="../../static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../static/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../static/js/iCheck/icheck.min.js"></script>
+	<script type="text/javascript" src="../../static/js/common.js"></script>
+	<link href="../../static/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="../../static/js/iCheck/all.css" rel="stylesheet" type="text/css">
+	<link href="../../static/css/all.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="../../static/bootstrap-select/bootstrap-select.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../static/bootstrap-select/bootstrap-select.css">
+	<script type="text/javascript"
+			src="../../static/My97DatePicker/WdatePicker.js"></script>
+	<script>
+        $(function () {
+            //加载政区树
+            $("#name").myTree({
+                width: "150px",
+                height: "32px",
+                valueField: "code",
+                parentField: "pId",
+                textField: "name",
+                url: "SSJSON.json"
+            });
+        });
+	</script>
+	<style>
+		.bootstrap-select > .dropdown-toggle {
+			position: relative;
+			width: 150px;
+			height: 32px;
+			z-index: 1;
+			text-align: right;
+			white-space: nowrap;
+		}
+		.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+			width: 150px;
+		}
+	</style>
+</head>
+<body>
+	<div style="margin-left: 10px;margin-right: 10px">
+		<div class="ywt-tab-content JS-tab-content">
+			<div id="home" class="active">
+				<div class="search-container">
+					<div class="form-block form-block-v">
+						<label class="form-label">名称</label>
+						<div class="form-box">
+							<input class="form-input form-input-radius" placeholder="请输入名称"/>
+						</div>
+					</div>
+					<div class="form-block form-block-v">
+						<label class="form-label">所属地区</label>
+						<div class="form-box">
+							<select name="" id="name" class="selectpicker" style="height: 32px;width: 150px"
+									data-live-search="true">
+								<optgroup label="广东省">
+									<option value="1">广州市</option>
+									<option value="2">深圳市</option>
+									<option value="3">珠海市</option>
+								</optgroup>
+								<optgroup label="广西">
+									<option value="1">南宁市</option>
+									<option value="2">柳州</option>
+									<option value="3">桂林市</option>
+								</optgroup>
+								<optgroup label="山东">
+									<option value="1">烟台</option>
+									<option value="2">青岛</option>
+									<option value="3">济南</option>
+								</optgroup>
+							</select>
+						</div>
+					</div>
+					<div class="form-block form-block-v">
+						<label class="form-label">类型</label>
+						<div class="form-box">
+							<select name="" id="type" class="selectpicker" style="height: 32px;width: 150px">
+								<option value="">请选择……</option>
+								<option value="1">宪法</option>
+								<option value="1">法律</option>
+								<option value="2">行政法规</option>
+								<option value="2">地方法规</option>
+								<option value="3">部门规章</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-block form-block-v">
+						<label class="form-label">时间</label>
+						<div class="form-box" style="display: inline;float: left">
+							<input class="form-input form-input-radius" placeholder="请选择开始日期" onchange="sureTime()"
+								   onfocus="WdatePicker({skin:'default',dateFmt:'yyyy-MM-dd',opposite:false});"/>
+						</div>
+						<div class="form-box" style="display: inline;float: left">&emsp;~&emsp;</div>
+						<div class="form-box" style="display: inline;float: left">
+							<input class="form-input form-input-radius" placeholder="请选择结束日期" onchange="sureTime()"
+								   onfocus="WdatePicker({skin:'default',dateFmt:'yyyy-MM-dd',opposite:false})"/>
+						</div>
+					</div>
+
+					<!--
+					<div class="form-block form-block-v">
+						<label class="form-label">拆迁逾期</label>
+						<div class="form-box">
+							<div class="select-box">
+								<select class="form-input">
+									<option>拆迁逾期</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-block form-block-v">
+						<label class="form-label">年份</label>
+						<div class="form-box">
+							<input class="JS-datepicker form-input form-input-radius" placeholder="2018" />
+						</div>
+					</div>
+					-->
+					<div class="btn-box">
+						<buttton class="btn btn-info">查询</buttton>
+						<buttton class="btn btn-info">添加</buttton>
+						<buttton class="btn btn-info">导出</buttton>
+					</div>
+				</div>
+				<div class="content-box tz">
+					<div class="content-body">
+						<table class="table-list">
+							<thead>
+							<tr>
+								<th>类型</th>
+								<th>名称</th>
+								<th>相关内容</th>
+								<!--
+								<th class="ps">责任单位
+									<span class="s-j"></span>
+								</th>
+								<th class="ps">建设规模和内容
+									<span class="s-s"></span>
+								</th>
+								<th class="ps">总投资（万元）
+									<span class="s"></span>
+								</th>
+								-->
+								<th>发布时间</th>
+								<!--	<th>测试主管部门</th>
+									<th>测试负责人</th>
+									<th>报告审核人</th>
+									<th>完成日期</th>
+									<th>参加测试人员</th>
+									<th>验收部门</th>
+									<th>验收日期</th>
+									<th>备注</th>
+									<th>编辑</th>
+									<th>删除</th>-->
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>宪法</td>
+								<td>《水法》</td>
+								<td><a href="">XXXXXX</a></td>
+								<td>2002-08-29</td>
+								<!--	<td>300</td>
+									<td>100</td>
+									<td>xxdd</td>
+									<td>2017-11-07</td>
+									<td></td>
+									<td></td>
+									<td>2017-12-21</td>
+									<td></td>
+									<td><a href="#"><img src="../../static/img/edit.gif"></a></td>
+									<td><a href="#"><img src="../../static/img/delete.gif"></a></td>-->
+							</tr>
+							<tr>
+								<td>行政法规</td>
+								<td>xxx</td>
+								<td><a href="">XXXXXX</a></td>
+								<td>xxxxxxxxxx</td>
+								<!--	<td>300</td>
+									<td>100</td>
+									<td>xxdd</td>
+									<td>2017-11-07</td>
+									<td></td>
+									<td></td>
+									<td>2017-12-21</td>
+									<td></td>
+									<td><a href="#"><img src="../../static/img/edit.gif"></a></td>
+									<td><a href="#"><img src="../../static/img/delete.gif"></a></td>-->
+							</tr>
+							<tr>
+								<td>行政法规</td>
+								<td>xxx</td>
+								<td><a href="">XXXXXX</a></td>
+								<td>xxxxxxxxxx</td>
+								<!--				<td>300</td>
+												<td>100</td>
+												<td>xxdd</td>
+												<td>2017-11-07</td>
+												<td></td>
+												<td></td>
+												<td>2017-12-21</td>
+												<td></td>
+												<td><a href="#"><img src="../../static/img/edit.gif"></a></td>
+												<td><a href="#"><img src="../../static/img/delete.gif"></a></td>-->
+							</tr>
+							<tr>
+								<td>部门规章</td>
+								<td>xxx</td>
+								<td><a href="">XXXXXX</a></td>
+								<td>xxxxxxxxxx</td>
+							</tr>
+							<tr>
+								<td>部门规章</td>
+								<td>xxx</td>
+								<td><a href="">XXXXXX</a></td>
+								<td>xxxxxxxxxx</td>
+							</tr>
+							<tr>
+								<td>部门规章</td>
+								<td>xxx</td>
+								<td><a href="">XXXXXX</a></td>
+								<td>xxxxxxxxxx</td>
+							</tr>
+							<tr>
+								<td>部门规章</td>
+								<td>xxx</td>
+								<td><a href="">XXXXXX</a></td>
+								<td>xxxxxxxxxx</td>
+							</tr>
+							<tr>
+								<td>部门规章</td>
+								<td>xxx</td>
+								<td><a href="">XXXXXX</a></td>
+								<td>xxxxxxxxxx</td>
+							</tr>
+							<tr>
+								<td>部门规章</td>
+								<td>xxx</td>
+								<td><a href="">XXXXXX</a></td>
+								<td>xxxxxxxxxx</td>
+							</tr>
+							<tr>
+								<td>部门规章</td>
+								<td>xxx</td>
+								<td><a href="">XXXXXX</a></td>
+								<td>xxxxxxxxxx</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="content-foot">
+						<div class="table-foot">
+							<div class="table-page-show">
+								<div class="select-box select-box-ms">
+									<select class="form-input" placeholder="建设性质">
+										<option>10条/页</option>
+									</select>
+								</div>
+							</div>
+							<div class="table-page">
+								<a class="disabled">&lt;</a>
+								<a class="on">1</a>
+								<a>2</a>
+								<a>3</a>
+								<a>4</a>
+								<a>6</a>
+								<a>&gt;</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="info">
+				<div class="search-container">
+					<div class="form-block form-block-v">
+						<label class="form-label">项目名称</label>
+						<div class="form-box">
+							<input class="form-input" placeholder="项目名称"/>
+						</div>
+					</div>
+					<div class="form-block form-block-v">
+						<label class="form-label">四水类别</label>
+						<div class="form-box">
+							<div class="select-box">
+								<select class="form-input" placeholder="四水类别">
+									<option>四水类别</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-block form-block-v">
+						<label class="form-label">拆迁逾期</label>
+						<div class="form-box">
+							<div class="select-box">
+								<select class="form-input">
+									<option>拆迁逾期</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-block form-block-v">
+						<label class="form-label">征地逾期</label>
+						<div class="form-box">
+							<div class="select-box">
+								<select class="form-input">
+									<option>征地逾期</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="btn-box">
+						<buttton class="btn btn-info">搜索</buttton>
+						<buttton class="btn disabled">重置</buttton>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

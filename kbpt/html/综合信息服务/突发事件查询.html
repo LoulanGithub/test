@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>突发事件查询</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta name="renderer" content="webkit">
+	<meta name="wap-font-scale" content="no">
+	<script type="text/javascript" src="../../static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../static/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../static/js/iCheck/icheck.min.js"></script>
+	<script type="text/javascript" src="../../static/js/common.js"></script>
+	<link href="../../static/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="../../static/js/iCheck/all.css" rel="stylesheet" type="text/css">
+	<link href="../../static/css/all.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="../../static/bootstrap-select/bootstrap-select.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../static/bootstrap-select/bootstrap-select.css">
+	<script type="text/javascript" src="../../static/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+	<script type="text/javascript" src="../../static/bootstrap-datepicker/bootstrap-datepicker.zh-CN.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../static/bootstrap-datepicker/bootstrap-datepicker3.min.css">
+	<script>
+        $(function () {
+            $(".datepicker").datepicker({
+                language: "zh-CN",
+                autoclose: true,//选中之后自动隐藏日期选择框
+                todayBtn: true,//今日按钮
+                format: "yyyy-mm-dd"//日期格式，详见 http://bootstrap-datepicker.readthedocs.org/en/release/options.html#format
+            });
+        });
+	</script>
+</head>
+<body>
+	<div style="margin-left: 10px;margin-right: 10px">
+		<div class="ywt-tab-content JS-tab-content">
+			<div id="home" class="active">
+				<div class="search-container">
+					<div class="form-block form-block-v">
+						<label class="form-label">突发事件名称</label>
+						<div class="form-box">
+							<input class="form-input form-input-radius" placeholder="请输入名称"/>
+						</div>
+					</div>
+					<div class="form-block form-block-v">
+						<label class="form-label">水库代码</label>
+						<div class="form-box">
+							<input class="form-input form-input-radius" placeholder="请输入代码"/>
+						</div>
+					</div>
+
+					<div class="form-block form-block-v">
+						<label class="form-label">发生日期</label>
+						<div class="form-box" style="display: inline;float: left">
+							<div class="date-box date-box-ms date-box-block">
+								<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+								<input class="datepicker form-input form-input-radius" value="2018-06-29"/>
+							</div>
+						</div>
+						<div class="form-box" style="display: inline;float: left">&emsp;~&emsp;</div>
+						<div class="form-box" style="display: inline;float: left">
+							<div class="date-box date-box-ms date-box-block">
+								<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+								<input class="datepicker form-input form-input-radius" value="2018-06-29"/>
+							</div>
+						</div>
+					</div>
+
+					<!--
+					<div class="form-block form-block-v">
+						<label class="form-label">拆迁逾期</label>
+						<div class="form-box">
+							<div class="select-box">
+								<select class="form-input">
+									<option>拆迁逾期</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-block form-block-v">
+						<label class="form-label">年份</label>
+						<div class="form-box">
+							<input class="JS-datepicker form-input form-input-radius" placeholder="2018" />
+						</div>
+					</div>
+					-->
+					<div class="btn-box">
+						<buttton class="btn btn-info">查询</buttton>
+						<!--<buttton class="btn btn-warning">添加</buttton>-->
+						<buttton class="btn btn-success">导出Excel</buttton>
+					</div>
+				</div>
+				<div class="content-box tz">
+					<div class="content-body">
+						<table class="table-list">
+							<thead>
+							<tr>
+								<th>水库代码</th>
+								<th>水库名称</th>
+								<th>突发事件名称</th>
+								<th>发生地点</th>
+								<th>事件描述</th>
+								<!--
+								<th class="ps">责任单位
+									<span class="s-j"></span>
+								</th>
+								<th class="ps">建设规模和内容
+									<span class="s-s"></span>
+								</th>
+								<th class="ps">总投资（万元）
+									<span class="s"></span>
+								</th>
+								-->
+								<th>联系人</th>
+								<th>上报单位</th>
+								<th>联系电话</th>
+								<th>发生日期</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>12347198</td>
+								<td>三峡水坝</td>
+								<td>决堤</td>
+								<td>长江</td>
+								<td>河口决堤</td>
+								<td>张三</td>
+								<td>水坝管理处</td>
+								<td>110</td>
+								<td>2018-9-27</td>
+
+								<!--<td><a href="#"><img src="../../static/img/edit.gif"></a></td>
+								<td><a href="#"><img src="../../static/img/delete.gif"></a></td>-->
+							</tr>
+							<tr>
+								<td>12347198</td>
+								<td>三峡水坝</td>
+								<td>决堤</td>
+								<td>长江</td>
+								<td>河口决堤</td>
+								<td>张三</td>
+								<td>水坝管理处</td>
+								<td>110</td>
+								<td>2018-9-27</td>
+
+								<!--<td><a href="#"><img src="../../static/img/edit.gif"></a></td>
+								<td><a href="#"><img src="../../static/img/delete.gif"></a></td>-->
+							</tr>
+							<tr>
+								<td>12347198</td>
+								<td>三峡水坝</td>
+								<td>决堤</td>
+								<td>长江</td>
+								<td>河口决堤</td>
+								<td>张三</td>
+								<td>水坝管理处</td>
+								<td>110</td>
+								<td>2018-9-27</td>
+
+								<!--<td><a href="#"><img src="../../static/img/edit.gif"></a></td>
+								<td><a href="#"><img src="../../static/img/delete.gif"></a></td>-->
+							</tr>
+							<tr>
+								<td>12347198</td>
+								<td>三峡水坝</td>
+								<td>决堤</td>
+								<td>长江</td>
+								<td>河口决堤</td>
+								<td>张三</td>
+								<td>水坝管理处</td>
+								<td>110</td>
+								<td>2018-9-27</td>
+
+								<!--<td><a href="#"><img src="../../static/img/edit.gif"></a></td>
+								<td><a href="#"><img src="../../static/img/delete.gif"></a></td>-->
+							</tr>
+							<tr>
+								<td>12347198</td>
+								<td>三峡水坝</td>
+								<td>决堤</td>
+								<td>长江</td>
+								<td>河口决堤</td>
+								<td>张三</td>
+								<td>水坝管理处</td>
+								<td>110</td>
+								<td>2018-9-27</td>
+
+								<!--<td><a href="#"><img src="../../static/img/edit.gif"></a></td>
+								<td><a href="#"><img src="../../static/img/delete.gif"></a></td>-->
+							</tr>
+							<tr>
+								<td>12347198</td>
+								<td>三峡水坝</td>
+								<td>决堤</td>
+								<td>长江</td>
+								<td>河口决堤</td>
+								<td>张三</td>
+								<td>水坝管理处</td>
+								<td>110</td>
+								<td>2018-9-27</td>
+
+								<!--<td><a href="#"><img src="../../static/img/edit.gif"></a></td>
+								<td><a href="#"><img src="../../static/img/delete.gif"></a></td>-->
+							</tr>
+							<tr>
+								<td>12347198</td>
+								<td>三峡水坝</td>
+								<td>决堤</td>
+								<td>长江</td>
+								<td>河口决堤</td>
+								<td>张三</td>
+								<td>水坝管理处</td>
+								<td>110</td>
+								<td>2018-9-27</td>
+
+								<!--<td><a href="#"><img src="../../static/img/edit.gif"></a></td>
+								<td><a href="#"><img src="../../static/img/delete.gif"></a></td>-->
+							</tr>
+							<tr>
+								<td>12347198</td>
+								<td>三峡水坝</td>
+								<td>决堤</td>
+								<td>长江</td>
+								<td>河口决堤</td>
+								<td>张三</td>
+								<td>水坝管理处</td>
+								<td>110</td>
+								<td>2018-9-27</td>
+
+								<!--<td><a href="#"><img src="../../static/img/edit.gif"></a></td>
+								<td><a href="#"><img src="../../static/img/delete.gif"></a></td>-->
+							</tr>
+							<tr>
+								<td>12347198</td>
+								<td>三峡水坝</td>
+								<td>决堤</td>
+								<td>长江</td>
+								<td>河口决堤</td>
+								<td>张三</td>
+								<td>水坝管理处</td>
+								<td>110</td>
+								<td>2018-9-27</td>
+
+								<!--<td><a href="#"><img src="../../static/img/edit.gif"></a></td>
+								<td><a href="#"><img src="../../static/img/delete.gif"></a></td>-->
+							</tr>
+							<tr>
+								<td>12347198</td>
+								<td>三峡水坝</td>
+								<td>决堤</td>
+								<td>长江</td>
+								<td>河口决堤</td>
+								<td>张三</td>
+								<td>水坝管理处</td>
+								<td>110</td>
+								<td>2018-9-27</td>
+
+								<!--<td><a href="#"><img src="../../static/img/edit.gif"></a></td>
+								<td><a href="#"><img src="../../static/img/delete.gif"></a></td>-->
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="content-foot">
+						<div class="table-foot">
+							<div class="table-page-show">
+								<div class="select-box select-box-ms">
+									<select class="form-input" placeholder="建设性质">
+										<option>10条/页</option>
+									</select>
+								</div>
+							</div>
+							<div class="table-page">
+								<a class="disabled">&lt;</a>
+								<a class="on">1</a>
+								<a>2</a>
+								<a>3</a>
+								<a>4</a>
+								<a>6</a>
+								<a>&gt;</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

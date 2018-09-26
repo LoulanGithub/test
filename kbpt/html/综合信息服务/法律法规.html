@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>法律法规</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta name="renderer" content="webkit">
+	<meta name="wap-font-scale" content="no">
+	<script type="text/javascript" src="../../static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../static/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../static/js/iCheck/icheck.min.js"></script>
+	<script type="text/javascript" src="../../static/js/common.js"></script>
+	<link href="../../static/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="../../static/js/iCheck/all.css" rel="stylesheet" type="text/css">
+	<link href="../../static/css/all.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="../../static/bootstrap-select/bootstrap-select.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../static/bootstrap-select/bootstrap-select.css">
+	<script type="text/javascript" src="../../static/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+	<script type="text/javascript" src="../../static/bootstrap-datepicker/bootstrap-datepicker.zh-CN.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../static/bootstrap-datepicker/bootstrap-datepicker3.min.css">
+	<script>
+        $(function () {
+            $(".datepicker").datepicker({
+                language: "zh-CN",
+                autoclose: true,//选中之后自动隐藏日期选择框
+                todayBtn: true,//今日按钮
+                format: "yyyy-mm-dd"//日期格式，详见 http://bootstrap-datepicker.readthedocs.org/en/release/options.html#format
+            });
+        });
+	</script>
+</head>
+<body>
+	<div style="margin-left: 10px;margin-right: 10px">
+		<div class="ywt-tab-content JS-tab-content">
+			<div id="home" class="active">
+				<div class="search-container">
+					<div class="form-block form-block-v">
+						<label class="form-label">相关内容</label>
+						<div class="form-box">
+							<input class="form-input form-input-radius" placeholder="请输入要查询的内容"/>
+						</div>
+					</div>
+					<div class="form-block form-block-v">
+						<label class="form-label">名称</label>
+						<div class="form-box">
+							<div class="select-box select-box-ms select-box-radius">
+								<select name="" id="name" class="form-input" style="height: 32px;width: 150px"
+										data-live-search="true">
+									<option value="">请选择法律法规</option>
+									<option value="1">《水法》</option>
+									<option value="1">《防洪法》</option>
+									<option value="1">《防汛条例》</option>
+									<option value="1">《水法》</option>
+									<option value="1">《水法》</option>
+									<option value="1">《水法》</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-block form-block-v">
+						<label class="form-label">类型</label>
+						<div class="form-box">
+							<div class="select-box select-box-ms select-box-radius">
+								<select name="" id="type" class="form-input" style="height: 32px;width: 150px">
+									<option value="">请选择……</option>
+									<option value="1">宪法</option>
+									<option value="1">法律</option>
+									<option value="2">行政法规</option>
+									<option value="2">地方法规</option>
+									<option value="3">部门规章</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-block form-block-v">
+						<label class="form-label">时间</label>
+						<div class="form-box" style="display: inline;float: left">
+							<div class="date-box date-box-ms date-box-block">
+								<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+								<input class="datepicker form-input form-input-radius" value="2018-06-29"/>
+							</div>
+						</div>
+						<div class="form-box" style="display: inline;float: left">&emsp;~&emsp;</div>
+						<div class="form-box" style="display: inline;float: left">
+							<div class="date-box date-box-ms date-box-block">
+								<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+								<input class="datepicker form-input form-input-radius" value="2018-06-29"/>
+							</div>
+						</div>
+					</div>
+
+					<!--
+					<div class="form-block form-block-v">
+						<label class="form-label">拆迁逾期</label>
+						<div class="form-box">
+							<div class="select-box">
+								<select class="form-input">
+									<option>拆迁逾期</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-block form-block-v">
+						<label class="form-label">年份</label>
+						<div class="form-box">
+							<input class="JS-datepicker form-input form-input-radius" placeholder="2018" />
+						</div>
+					</div>
+					-->
+					<div class="btn-box">
+						<buttton class="btn btn-info">查询</buttton>
+						<buttton class="btn btn-warning">添加</buttton>
+						<buttton class="btn btn-success" onclick="pInfo('#68BA1E','mid-center','试点项目导出成功。','info')">
+							导出Excel
+						</buttton>
+					</div>
+				</div>
+				<div class="content-box tz">
+					<div class="content-body">
+						<table class="table-list">
+							<thead>
+							<tr>
+								<th>类型</th>
+								<th>名称</th>
+								<th>相关内容</th>
+								<!--
+								<th class="ps">责任单位
+									<span class="s-j"></span>
+								</th>
+								<th class="ps">建设规模和内容
+									<span class="s-s"></span>
+								</th>
+								<th class="ps">总投资（万元）
+									<span class="s"></span>
+								</th>
+								-->
+								<th>发布时间</th>
+								<!--	<th>测试主管部门</th>
+									<th>测试负责人</th>
+									<th>报告审核人</th>
+									<th>完成日期</th>
+									<th>参加测试人员</th>
+									<th>验收部门</th>
+									<th>验收日期</th>
+									<th>备注</th>
+									<th>编辑</th>
+									<th>删除</th>-->
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>宪法</td>
+								<td>《水法》</td>
+								<td><a href="#" data-toggle="modal" data-target="#addInfo">XXXXXX</a></td>
+								<td>2002-08-29</td>
+								<!--	<td>300</td>
+									<td>100</td>
+									<td>xxdd</td>
+									<td>2017-11-07</td>
+									<td></td>
+									<td></td>
+									<td>2017-12-21</td>
+									<td></td>
+									<td><a href="#"><img src="../../static/img/edit.gif"></a></td>
+									<td><a href="#"><img src="../../static/img/delete.gif"></a></td>-->
+							</tr>
+							<tr>
+								<td>宪法</td>
+								<td>《水法》</td>
+								<td><a href="#" data-toggle="modal" data-target="#addInfo">XXXXXX</a></td>
+								<td>2002-08-29</td>
+								<!--	<td>300</td>
+									<td>100</td>
+									<td>xxdd</td>
+									<td>2017-11-07</td>
+									<td></td>
+									<td></td>
+									<td>2017-12-21</td>
+									<td></td>
+									<td><a href="#"><img src="../../static/img/edit.gif"></a></td>
+									<td><a href="#"><img src="../../static/img/delete.gif"></a></td>-->
+							</tr>
+							<tr>
+								<td>宪法</td>
+								<td>《水法》</td>
+								<td><a href="#" data-toggle="modal" data-target="#addInfo">XXXXXX</a></td>
+								<td>2002-08-29</td>
+								<!--	<td>300</td>
+									<td>100</td>
+									<td>xxdd</td>
+									<td>2017-11-07</td>
+									<td></td>
+									<td></td>
+									<td>2017-12-21</td>
+									<td></td>
+									<td><a href="#"><img src="../../static/img/edit.gif"></a></td>
+									<td><a href="#"><img src="../../static/img/delete.gif"></a></td>-->
+							</tr>
+							<tr>
+								<td>宪法</td>
+								<td>《水法》</td>
+								<td><a href="#" data-toggle="modal" data-target="#addInfo">XXXXXX</a></td>
+								<td>2002-08-29</td>
+								<!--	<td>300</td>
+									<td>100</td>
+									<td>xxdd</td>
+									<td>2017-11-07</td>
+									<td></td>
+									<td></td>
+									<td>2017-12-21</td>
+									<td></td>
+									<td><a href="#"><img src="../../static/img/edit.gif"></a></td>
+									<td><a href="#"><img src="../../static/img/delete.gif"></a></td>-->
+							</tr>
+							<tr>
+								<td>宪法</td>
+								<td>《水法》</td>
+								<td><a href="#" data-toggle="modal" data-target="#addInfo">XXXXXX</a></td>
+								<td>2002-08-29</td>
+								<!--	<td>300</td>
+									<td>100</td>
+									<td>xxdd</td>
+									<td>2017-11-07</td>
+									<td></td>
+									<td></td>
+									<td>2017-12-21</td>
+									<td></td>
+									<td><a href="#"><img src="../../static/img/edit.gif"></a></td>
+									<td><a href="#"><img src="../../static/img/delete.gif"></a></td>-->
+							</tr>
+							<tr>
+								<td>宪法</td>
+								<td>《水法》</td>
+								<td><a href="#" data-toggle="modal" data-target="#addInfo">XXXXXX</a></td>
+								<td>2002-08-29</td>
+								<!--	<td>300</td>
+									<td>100</td>
+									<td>xxdd</td>
+									<td>2017-11-07</td>
+									<td></td>
+									<td></td>
+									<td>2017-12-21</td>
+									<td></td>
+									<td><a href="#"><img src="../../static/img/edit.gif"></a></td>
+									<td><a href="#"><img src="../../static/img/delete.gif"></a></td>-->
+							</tr>
+							<tr>
+								<td>宪法</td>
+								<td>《水法》</td>
+								<td><a href="#" data-toggle="modal" data-target="#addInfo">XXXXXX</a></td>
+								<td>2002-08-29</td>
+								<!--	<td>300</td>
+									<td>100</td>
+									<td>xxdd</td>
+									<td>2017-11-07</td>
+									<td></td>
+									<td></td>
+									<td>2017-12-21</td>
+									<td></td>
+									<td><a href="#"><img src="../../static/img/edit.gif"></a></td>
+									<td><a href="#"><img src="../../static/img/delete.gif"></a></td>-->
+							</tr>
+							<tr>
+								<td>宪法</td>
+								<td>《水法》</td>
+								<td><a href="#" data-toggle="modal" data-target="#addInfo">XXXXXX</a></td>
+								<td>2002-08-29</td>
+								<!--	<td>300</td>
+									<td>100</td>
+									<td>xxdd</td>
+									<td>2017-11-07</td>
+									<td></td>
+									<td></td>
+									<td>2017-12-21</td>
+									<td></td>
+									<td><a href="#"><img src="../../static/img/edit.gif"></a></td>
+									<td><a href="#"><img src="../../static/img/delete.gif"></a></td>-->
+							</tr>
+							<tr>
+								<td>宪法</td>
+								<td>《水法》</td>
+								<td><a href="#" data-toggle="modal" data-target="#addInfo">XXXXXX</a></td>
+								<td>2002-08-29</td>
+								<!--	<td>300</td>
+									<td>100</td>
+									<td>xxdd</td>
+									<td>2017-11-07</td>
+									<td></td>
+									<td></td>
+									<td>2017-12-21</td>
+									<td></td>
+									<td><a href="#"><img src="../../static/img/edit.gif"></a></td>
+									<td><a href="#"><img src="../../static/img/delete.gif"></a></td>-->
+							</tr>
+							<tr>
+								<td>宪法</td>
+								<td>《水法》</td>
+								<td><a href="#" data-toggle="modal" data-target="#addInfo">XXXXXX</a></td>
+								<td>2002-08-29</td>
+								<!--	<td>300</td>
+									<td>100</td>
+									<td>xxdd</td>
+									<td>2017-11-07</td>
+									<td></td>
+									<td></td>
+									<td>2017-12-21</td>
+									<td></td>
+									<td><a href="#"><img src="../../static/img/edit.gif"></a></td>
+									<td><a href="#"><img src="../../static/img/delete.gif"></a></td>-->
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="content-foot">
+						<div class="table-foot">
+							<div class="table-page-show">
+								<div class="select-box select-box-ms">
+									<select class="form-input" placeholder="建设性质">
+										<option>10条/页</option>
+									</select>
+								</div>
+							</div>
+							<div class="table-page">
+								<a class="disabled">&lt;</a>
+								<a class="on">1</a>
+								<a>2</a>
+								<a>3</a>
+								<a>4</a>
+								<a>6</a>
+								<a>&gt;</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 添加弹出窗口 -->
+			<div class="modal fade" id="addInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+				 aria-hidden="true">
+				<div class="modal-dialog" style="width: 1024px; height: 500px;">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								&times;
+							</button>
+							<h4 class="modal-title" id="myModalLabel">
+								《水法》
+							</h4>
+						</div>
+						<div class="modal-body">
+							<span>第九条　国家保护水资源，采取有效措施，保护植被，植树种草，涵养水源，防治水土流失和水体污染，改善生态环境。</span>
+							<br><span>第十条　国家鼓励和支持开发、利用、节约、保护、管理水资源和防治水害的先进科学技术的研究、推广和应用。</span>
+							<br><span>第十一条　在开发、利用、节约、保护、管理水资源和防治水害等方面成绩显著的单位和个人，由人民政府给予奖励。</span>
+							<br><span>第十二条　国家对水资源实行流域管理与行政区域管理相结合的管理体制。</span>
+							<br><span>第十四条　国家制定全国水资源战略规划。开发、利用、节约、保护水资源和防治水害，应当按照流域、区域统一制定规划。规划分为流域规划和区域规划。流域规划包括流域综合规划和流域专业规划；区域规划包括区域综合规划和区域专业规划。前款所称综合规划，是指根据经济社会发展需要和水资源开发利用现状编制的开发、利用、节约、保护水资源和防治水害的总体部署。前款所称专业规划，是指防洪、治涝、灌溉、航运、供水、水力发电、竹木流放、渔业、水资源保护、水土保持、防沙治沙、节约用水等规划。</span>
+							<br><span>第十五条　流域范围内的区域规划应当服从流域规划，专业规划应当服从综合规划。流域综合规划和区域综合规划以及与土地利用关系密切的专业规划，应当与国民经济和社会发展规划以及土地利用总体规划、城市总体规划和环境保护规划相协调，兼顾各地区、各行业的需要。</span>
+							<br><span>第十七条　国家确定的重要江河、湖泊的流域综合规划，由国务院水行政主管部门会同国务院有关部门和有关省、自治区、直辖市人民政府编制，报国务院批准。跨省、自治区、直辖市的其他江河、湖泊的流域综合规划和区域综合规划，由有关流域管理机构会同江河、湖泊所在地的省、自治区、直辖市人民政府水行政主管部门和有关部门编制，分别经有关省、自治区、直辖市人民政府审查提出意见后，报国务院水行政主管部门审核；国务院水行政主管部门征求国务院有关部门意见后，报国务院或者其授权的部门批准。</span>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-success btn-ms" data-dismiss="modal">确定</button>
+							<button type="button" class="btn btn-warning btn-ms" data-dismiss="modal">关闭</button>
+						</div>
+					</div><!-- /.modal-content -->
+				</div><!-- /.modal -->
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>
