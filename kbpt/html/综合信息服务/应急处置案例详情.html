@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>应急处置案例详情</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta name="renderer" content="webkit">
+	<meta name="wap-font-scale" content="no">
+	<script type="text/javascript" src="../../static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../static/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../static/js/iCheck/icheck.min.js"></script>
+	<script type="text/javascript" src="../../static/js/common.js"></script>
+	<link href="../../static/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="../../static/js/iCheck/all.css" rel="stylesheet" type="text/css">
+	<link href="../../static/css/all.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="../../static/bootstrap-select/bootstrap-select.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../static/bootstrap-select/bootstrap-select.css">
+	<link rel="stylesheet" type="text/css" href="../../static/css/info.css">
+	<script type="text/javascript" src="../../static/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+	<script type="text/javascript" src="../../static/bootstrap-datepicker/bootstrap-datepicker.zh-CN.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../static/bootstrap-datepicker/bootstrap-datepicker3.min.css">
+	<script type="text/javascript" src="../../static/echarts/3.8/echarts.min.js"></script>
+	<script>
+        $(function () {
+            $(".datepicker").datepicker({
+                language: "zh-CN",
+                autoclose: true,//选中之后自动隐藏日期选择框
+                todayBtn: true,//今日按钮
+                format: "yyyy年mm月dd日"//日期格式，详见 http://bootstrap-datepicker.readthedocs.org/en/release/options.html#format
+            });
+        });
+
+        function paly() {
+            var video=document.getElementById("video");
+            video.play();
+        }
+
+        function closeVideo() {
+            var video=document.getElementById("video");
+            video.pause();
+        }
+	</script>
+</head>
+<body>
+	<div class="main">
+		<div class="title">应急处置案例详细信息</div>
+		<div class="newrow1">
+
+			<table class="table-edit">
+				<tbody>
+				<tr>
+					<td class="t-edit-title">突发事件编号</td>
+					<td>
+						<span>123456567890</span>
+					</td>
+					<td class="t-edit-title">突发事件名称</td>
+					<td>
+						<span>XXXXXXXXXXX</span>
+					</td>
+					<td class="t-edit-title">所在地点</td>
+					<td>
+						<span>ssssssss</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="t-edit-title">所在水库编码</td>
+					<td>
+						<span>SK45678</span>
+					</td>
+					<td class="t-edit-title">所在水库名称</td>
+					<td>
+						<span>三峡水坝</span>
+					</td>
+					<td class="t-edit-title">事件发生时间</td>
+					<td>
+						kkkkkkkkkkkkk
+					</td>
+				</tr>
+				<tr>
+					<td class="t-edit-title">事件信息描述</td>
+					<td>
+						LLLLLLLLLLLLL
+					</td>
+					<td class="t-edit-title">事件视频文件</td>
+					<td>
+						<a href="#" data-toggle="modal" data-target="#addInfo">video.mp4</a>
+					</td>
+					<td class="t-edit-title">事件现场照片</td>
+					<td>
+						<a href="#" data-toggle="modal" data-target="#addInfo2">现场照片</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="t-edit-title t-edit-title-t">事件过程描述</td>
+					<td colspan="5">
+						<textarea readonly class="form-input form-input-ms input-block form-input-radius">&emsp;&emsp;三峡大坝，位于中国湖北省宜昌市三斗坪镇境内，距下游葛洲坝水利枢纽工程38公里，是当今世界最大的水利发电工程——三峡水电站的主体工程、三峡大坝旅游区的核心景观、三峡水库的东端。三峡大坝工程包括主体建筑物及导流工程两部分，全长约3335m，坝高185米，工程总投资为954.6亿人民币，于1994年12月14日正式动工修建，2006年5月20日全线修建成功。经国家防总批准，三峡水库于2011年9月10日零时正式启动第四次175米试验性蓄水，至18日19时，水库水位已达到160.18米。2012年7月23日，三峡枢纽开启7个泄洪深孔泄洪。上游来水流量激增至每秒4.6万立方米。2012年7月24日，三峡大坝入库流量达7.12万立方米/秒，是三峡水库建库以来遭遇的最大洪峰。
+						</textarea>
+					</td>
+				</tr>
+				<tr>
+					<td class="t-edit-title t-edit-title-t">应急处置措施</td>
+					<td colspan="5">
+						<textarea readonly class="form-input form-input-ms input-block form-input-radius">&emsp;&emsp;三峡大坝，位于中国湖北省宜昌市三斗坪镇境内，距下游葛洲坝水利枢纽工程38公里，是当今世界最大的水利发电工程——三峡水电站的主体工程、三峡大坝旅游区的核心景观、三峡水库的东端。三峡大坝工程包括主体建筑物及导流工程两部分，全长约3335m，坝高185米，工程总投资为954.6亿人民币，于1994年12月14日正式动工修建，2006年5月20日全线修建成功。经国家防总批准，三峡水库于2011年9月10日零时正式启动第四次175米试验性蓄水，至18日19时，水库水位已达到160.18米。2012年7月23日，三峡枢纽开启7个泄洪深孔泄洪。上游来水流量激增至每秒4.6万立方米。2012年7月24日，三峡大坝入库流量达7.12万立方米/秒，是三峡水库建库以来遭遇的最大洪峰。
+						</textarea>
+					</td>
+				</tr>
+				<tr>
+					<td class="t-edit-title t-edit-title-t">应急调度方案</td>
+					<td colspan="5">
+						<textarea readonly class="form-input form-input-ms input-block form-input-radius">&emsp;&emsp;三峡大坝，位于中国湖北省宜昌市三斗坪镇境内，距下游葛洲坝水利枢纽工程38公里，是当今世界最大的水利发电工程——三峡水电站的主体工程、三峡大坝旅游区的核心景观、三峡水库的东端。三峡大坝工程包括主体建筑物及导流工程两部分，全长约3335m，坝高185米，工程总投资为954.6亿人民币，于1994年12月14日正式动工修建，2006年5月20日全线修建成功。经国家防总批准，三峡水库于2011年9月10日零时正式启动第四次175米试验性蓄水，至18日19时，水库水位已达到160.18米。2012年7月23日，三峡枢纽开启7个泄洪深孔泄洪。上游来水流量激增至每秒4.6万立方米。2012年7月24日，三峡大坝入库流量达7.12万立方米/秒，是三峡水库建库以来遭遇的最大洪峰。
+						</textarea>
+					</td>
+				</tr>
+				<tr>
+					<td class="t-edit-title">应急抢救</td>
+					<td>
+						rrrrrrrrr
+					</td>
+					<td class="t-edit-title">应急转移和救助</td>
+					<td>
+						RRRRRRRRRR
+					</td>
+					<td class="t-edit-title">应急监测与巡查</td>
+					<td>
+						AAAAAAAAAAAAAAAA
+					</td>
+				</tr>
+				<tr>
+					<td class="t-edit-title t-edit-title-t">灾情调查与评估</td>
+					<td colspan="5">
+						<textarea readonly class="form-input form-input-ms input-block form-input-radius">&emsp;&emsp;三峡大坝，位于中国湖北省宜昌市三斗坪镇境内，距下游葛洲坝水利枢纽工程38公里，是当今世界最大的水利发电工程——三峡水电站的主体工程、三峡大坝旅游区的核心景观、三峡水库的东端。三峡大坝工程包括主体建筑物及导流工程两部分，全长约3335m，坝高185米，工程总投资为954.6亿人民币，于1994年12月14日正式动工修建，2006年5月20日全线修建成功。经国家防总批准，三峡水库于2011年9月10日零时正式启动第四次175米试验性蓄水，至18日19时，水库水位已达到160.18米。2012年7月23日，三峡枢纽开启7个泄洪深孔泄洪。上游来水流量激增至每秒4.6万立方米。2012年7月24日，三峡大坝入库流量达7.12万立方米/秒，是三峡水库建库以来遭遇的最大洪峰。
+						</textarea>
+					</td>
+				</tr>
+				<tr>
+					<td class="t-edit-title t-edit-title-t">经验教训</td>
+					<td colspan="5">
+						<textarea readonly class="form-input form-input-ms input-block form-input-radius">&emsp;&emsp;做一名合格的安全员”是我现行本职工作的追求目标，自肩负安全员这个重任以来，我始终保持清醒的头脑，勤勤恳恳、踏踏实实的态度来对待我的工作，在现行岗位上任职一年来，严格按照年初制定的工作目标，全面贯彻“安全第一、预防为主”的方针,强化安全生产管理，xx年在所长的正确领导下，农电公司有关领导的信任与支持下，从事我非常珍惜这个安全角色，以积极的态度投入工作，今年的工作我感到非常充实的一年
+						</textarea>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- 添加弹出窗口 -->
+		<div class="modal fade" id="addInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+			 aria-hidden="true">
+			<div class="modal-dialog" style="width: 1024px; height: 500px;">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="closeVideo()">
+							&times;
+						</button>
+						<h4 class="modal-title" id="myModalLabel">
+							三峡大坝XX事件视频文件
+						</h4>
+					</div>
+					<div class="modal-body">
+						<video id="video" src="../../static/vadio/Video.mp4"  controls="controls" style="width: 100%;height: 500px"></video>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-success btn-ms" onclick="paly()">播放</button>
+						<button type="button" class="btn btn-warning btn-ms" data-dismiss="modal" onclick="closeVideo()">关闭</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+		</div>
+		<div class="modal fade" id="addInfo2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+			 aria-hidden="true">
+			<div class="modal-dialog" style="width: 1024px; height: 500px;">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title" id="myModalLabel2">
+							三峡大坝XX事件现场照片
+						</h4>
+					</div>
+					<div class="modal-body">
+						<div class="col-md-4">
+							<img src="img/33.jpg" style="width: 100%">
+						</div>
+						<div class="col-md-4">
+							<img src="img/22.jpg" style="width: 100%">
+						</div>
+						<div class="col-md-4">
+							<img src="img/33.jpg" style="width: 100%">
+						</div>
+						<div class="col-md-4">
+							<img src="img/33.jpg" style="width: 100%">
+						</div>
+						<div class="col-md-4">
+							<img src="img/22.jpg" style="width: 100%">
+						</div>
+						<div class="col-md-4">
+							<img src="img/33.jpg" style="width: 100%">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<!--<button type="button" class="btn btn-success btn-ms" data-dismiss="modal">播放</button>-->
+						<button type="button" class="btn btn-warning btn-ms" data-dismiss="modal">关闭</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+		</div>
+
+	</div>
+</body>
+</html>
